@@ -1,0 +1,16 @@
+.env
+*.log
+node_modules/
+dist/
+dist-ssr/
+coverage/
+.DS_Store
+.vscode/
+.idea/
+*.local
+playwright-report/
+test-results/
+
+# Build caches / incremental build info
+.vite/
+*.tsbuildinfo

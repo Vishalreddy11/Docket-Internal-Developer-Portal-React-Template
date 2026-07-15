@@ -1,0 +1,13 @@
+{
+  "apiBaseUrl": "/api",
+  "authMode": "mock",
+  "oidc": {
+    "issuer": "https://identity.your-company.example/",
+    "clientId": "docket-frontend",
+    "redirectUri": "http://localhost:5173/callback",
+    "scopes": "openid profile email"
+  },
+  "environment": "development",
+  "enableTelemetry": false,
+  "otelEndpoint": ""
+}

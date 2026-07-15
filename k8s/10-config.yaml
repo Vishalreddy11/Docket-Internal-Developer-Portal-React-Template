@@ -1,0 +1,25 @@
+# Runtime config for the frontend. One container image, N environments —
+# only this ConfigMap changes per environment.
+#
+# The nginx container mounts this at /config/runtime-config.json; the SPA
+# fetches it before the first render (see src/config/runtime.ts).
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: docket-frontend-runtime-config
+  namespace: docket-frontend
+data:
+  runtime-config.json: |
+    {
+      "apiBaseUrl": "https://api.your-company.example",
+      "authMode": "oidc",
+      "oidc": {
+        "issuer": "https://identity.your-company.example/",
+        "clientId": "docket-frontend",
+        "redirectUri": "https://app.your-company.example/callback",
+        "scopes": "openid profile email"
+      },
+      "environment": "production",
+      "enableTelemetry": false,
+      "otelEndpoint": ""
+    }

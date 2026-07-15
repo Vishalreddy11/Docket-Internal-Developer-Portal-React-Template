@@ -1,0 +1,13 @@
+# The React template does NOT ship a backend. Docker-compose here spins up
+# only the nginx-served SPA. Wire your own backend into VITE_API_BASE_URL
+# (dev) or /config/runtime-config.json (production).
+services:
+  docket-frontend:
+    build: .
+    image: docket-frontend:local
+    container_name: docket-frontend
+    ports:
+      - "8080:8080"
+    # Mount runtime config for local dev (edit and refresh — no rebuild).
+    volumes:
+      - ./public/config/runtime-config.json:/config/runtime-config.json:ro
