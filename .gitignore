@@ -14,3 +14,7 @@ test-results/
 # Build caches / incremental build info
 .vite/
 *.tsbuildinfo
+
+# MSW service worker — generated (regenerated on install via msw.workerDirectory).
+# Kept out of the repo so archives/zips don't carry a .js file that mail filters block.
+public/mockServiceWorker.js
